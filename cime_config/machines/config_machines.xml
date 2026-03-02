@@ -522,6 +522,14 @@
       <env name="OMP_PROC_BIND">spread</env>
       <env name="OMP_PLACES">threads</env>
     </environment_variables>
+    <environment_variables DEBUG="TRUE">
+      <env name="LD_LIBRARY_PATH">$ENV{CRAY_LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH}</env> <!-- https://github.com/E3SM-Project/E3SM/issues/7117 -->
+    </environment_variables>
+    <environment_variables BUILD_THREADED="TRUE">
+      <env name="OMP_STACKSIZE">128M</env>
+      <env name="OMP_PROC_BIND">spread</env>
+      <env name="OMP_PLACES">threads</env>
+    </environment_variables>
     <environment_variables compiler="gnugpu">
       <env name="MPICH_GPU_SUPPORT_ENABLED">1</env>
     </environment_variables>
